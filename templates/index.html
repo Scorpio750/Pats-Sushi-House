@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pat's Sushi House</title>
+	</head>
+
+	<body>
+		<h1>Derp</h1>
+
+		<h2>Sushi Menu</h2>
+		<ol>
+			{% for item in menu %}
+			<li> {{ item[1] }} </li>
+			{% endfor %}
+		</ol>
+		<form action="/order">
+			<label>What kind of sushi would you like? </label>
+			<br><br>
+			<select name="sushi">
+				<option value=""> Please Select </option>
+				{% for item in menu %}
+				<option value='{{ item[0] }}'> {{ item[1] }} </option>
+				{% endfor %}
+			</select>
+			<br><br>
+
+			<label>Additional Comments</label><br>
+			<textarea cols="20" rows="5" name="food"></textarea><br>
+			<input type="submit" value="Submit" />
+		</form>
+		<br>
+	</body>
+</html>
