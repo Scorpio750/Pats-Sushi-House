@@ -1,0 +1,25 @@
+.sushi-piece {
+	
+}
+
+h1 {
+	color: blue;
+	animation-duration: 3s;
+	animation-name: slidein;
+}
+
+h2 {
+	color: red;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+	
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}

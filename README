@@ -1,1 +1,2 @@
-A program to help me familiarize with aspects of web programming. This will take an order from a fictitious Sushi House of mine and process it, using Twilio's Rest API to text the order information to the client.
+A program to help me familiarize with full-stack web programming. This will take an order from a fictitious Sushi House of mine and process it, using Twilio's Rest API to text the order information to the client.
+Implemented using Flask.
