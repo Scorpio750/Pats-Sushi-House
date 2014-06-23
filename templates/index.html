@@ -16,8 +16,8 @@
 			</div>
 		</div>
 
-		<div class="row, h2-slideoff">
-			<div class="large-6 columns">
+		<div class="row">
+			<div class="large-6 columns, h2-slideoff">
 				<h2>Sushi Menu</h2>
 			</div>
 		</div>
@@ -32,23 +32,26 @@
 			</div>
 		</div>
 
-		{% for item in menu %}
-		<div class="small-2 columns">
-			<div class="callout panel">
-				{{ item[1] }}
-			</div>
-		</div>
-		{% endfor %}
-
 		<div class="row">
-			<div class="large-12 columns">
-				<form action="/order">
-					<label class="joyride-close-tip" style="margin-left:0px">What kind of sushi would you like? </label>
+			{% for item in menu %}
+			<div class="small-2 columns">
+				<div class="callout panel">
+					{{ item[1] }}
 				</div>
 			</div>
-			<br><br>
+			{% endfor %}
+		</div>
+
+		<div class="row">
+			<div class="small-4 column">
+				<div class="callout panel">
+					<form action="/order">
+						<label>What kind of sushi would you like? </label>
+					</div>
+				</div>
+			</div>
 			<div class="row">
-				<div class="6-column">
+				<div class="small-6 column">
 					<select name="sushi">
 						<option value=""> Please Select </option>
 						{% for item in menu %}
@@ -58,19 +61,23 @@
 				</div>
 			</div>
 
-			<br><br>
-
-			<label class="callout panel">Please enter your number here so we can let you know when your order is ready.</label><br>
-			<input type="text" />
-			<input class="small round button" type="submit" value="Submit" />
-		</form>
+			<div class="row">
+				<div class="medium-6 medium-4 column">
+					<div class="callout panel">
+						<label>Please enter your number here so we can let you know when your order is ready.</label><br>
+						<input type="text" />
+						<input class="small round button" type="submit" value="Submit" />
+					</form>
+				</div>
+			</div>
+		</div>
 
 		<script src="/static/js/vendor/jquery.js"></script>
 		<script src="/static/js/vendor/fastclick.js"></script>
 		<script src="/static/js/foundation.min.js"></script>
 		<script>$(document).foundation();</script>
 		<audio loop>
-			<source src="/static/Lunar_Vi-corrifir.mp3"></source>
+		<source src="/static/Lunar_Vi-corrifir.mp3"></source>
 		</audio>
 		<script>
 			var audio = document.getElementsByTagName("audio")[0];
