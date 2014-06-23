@@ -4,8 +4,7 @@ body {
 	radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
 	background-color: slategray;
 	background-size:75px 100px;
-	-webkit-animation: shake ease .25s alternate 6;
-	-webkit-animation-delay: 3.5s;
+	-webkit-animation: background-transition 8s linear 7.5s, animated-background 1.09s linear 18.05s alternate infinite, shake 2s ease 3.5s alternate 2;
 }
 
 h1 {
@@ -16,6 +15,7 @@ h1 {
 	background-color: #456;
 	border: 20px groove slategray;
 	text-align: center;
+	margin-top: 10px;
 	padding-top: 10px;
 	-webkit-animation: slidein-right ease 3s;
 }
@@ -23,7 +23,7 @@ h1 {
 h1:hover {
 	color: #456;
 	background-color: #eee;
-	border: 20px ridge #aaa;
+	border: 20px ridge #888;
 }
 
 h2 {
@@ -35,12 +35,12 @@ h2 {
 	margin-bottom: 20px; 
 }
 
-.slideoff {
-	-webkit-animation: slideoff
+.h2-slideoff {
+	-webkit-animation: off-right 3.7s, slideoff 3s ease-in 3.7s reverse;
 }
 
-h2:hover {
-	-webkit-animation: grow ease 3s;
+.sushi-slideoff {
+	-webkit-animation: off-right 4.2s, slideoff 3s ease-in 4.2s reverse;
 }
 
 @-webkit-keyframes slidein-right {
@@ -62,18 +62,43 @@ h2:hover {
 }
 
 @-webkit-keyframes grow {
-	50% {
-		-webkit-transform: scale(2);
-	}
+	50% { -webkit-transform: scale(2); }
 }
 
 @-webkit-keyframes shake {
-	0% {
-		-webkit-transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(20deg);
+	0% { -webkit-transform: rotate(0deg); }
+	100% { 
+		-webkit-transform: rotate(-20deg);
+		background-position: -45% -45%;
 	}
 }
 
+@-webkit-keyframes off-right {
+	0%, 100% { margin-left:1000%; }
+}
+
+@-webkit-keyframes slideoff {
+	from { margin-left:0%; }
+	to { margin-left:150%; }
+}
+@-webkit-keyframes background-transition {
+	from {}
+	to {
+		background-image: url('/static/img/Trippy-Wallpaper.jpg');
+		background-size: 150% 150%;
+	}
+}
+
+@-webkit-keyframes animated-background {
+	from { 
+			background-position: 0 0;
+		}
+	50% {
+			background-position: 6.25% 0;
+	}
+	to {
+		background-position: 6.25% 11%; 
+	}
+	
+}	
 /*= require foundation */

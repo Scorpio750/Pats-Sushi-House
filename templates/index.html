@@ -12,19 +12,19 @@
 	<body>
 		<div class="row">
 			<div class="large-9 columns">
-				<div id="head1"><h1>Welcome to Pat's Sushi House!</h1></div>
+				<div><h1>Welcome to Pat's Sushi House!</h1></div>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row, h2-slideoff">
 			<div class="large-6 columns">
-				<h2 class="slide-off">Sushi Menu</h2>
+				<h2>Sushi Menu</h2>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="large-3 columns">
-				<ul class="slideoff" data-orbit>
+			<div class="medium-3 columns, sushi-slideoff">
+				<ul data-orbit>
 					{% for item in menu %}
 					<li><img src="/static/img/{{ item[2] }}"></li>
 					{% endfor %}
@@ -33,14 +33,13 @@
 		</div>
 
 		{% for item in menu %}
-		<div class="large-4 medium-6 columns">
+		<div class="small-2 columns">
 			<div class="callout panel">
 				{{ item[1] }}
 			</div>
 		</div>
-
 		{% endfor %}
-		<br><br>
+
 		<div class="row">
 			<div class="large-12 columns">
 				<form action="/order">
@@ -61,7 +60,7 @@
 
 			<br><br>
 
-			<label>Please enter your number here so we can let you know when your order is ready.</label><br>
+			<label class="callout panel">Please enter your number here so we can let you know when your order is ready.</label><br>
 			<input type="text" />
 			<input class="small round button" type="submit" value="Submit" />
 		</form>
@@ -70,5 +69,12 @@
 		<script src="/static/js/vendor/fastclick.js"></script>
 		<script src="/static/js/foundation.min.js"></script>
 		<script>$(document).foundation();</script>
+		<audio loop>
+			<source src="/static/Lunar_Vi-corrifir.mp3"></source>
+		</audio>
+		<script>
+			var audio = document.getElementsByTagName("audio")[0];
+			audio.play();
+		</script>
 	</body>
 </html>
