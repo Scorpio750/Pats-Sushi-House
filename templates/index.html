@@ -2,34 +2,73 @@
 <html>
 	<head>
 		<title>Pat's Sushi House</title>
-		<link type="text/css" rel="stylesheet" href="/static/style.css">
+		<link rel="stylesheet" href="static/css/foundation.css">
+		<link rel="stylesheet" href-"static/css/normalize.css">
+		<link rel="stylesheet" href="static/style.css">
+
+		<script src="static/js/vendor/modernizr.js"></script>
 	</head>
 
 	<body>
-		<div id="sushi-piece"><img src="/static/img/Sushi.png"></div>
-		<h1>Welcome to Pat's Sushi House!</h1>
+		<div class="row">
+			<div class="large-9 columns">
+				<div id="head1"><h1>Welcome to Pat's Sushi House!</h1></div>
+			</div>
+		</div>
 
-		<h2>Sushi Menu</h2>
-		<ol>
-			{% for item in menu %}
-			<li> {{ item[1] }} </li>
-			{% endfor %}
-		</ol>
-		<form action="/order">
-			<label>What kind of sushi would you like? </label>
+		<div class="row">
+			<div class="large-6 columns">
+				<h2 class="slide-off">Sushi Menu</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-3 columns">
+				<ul class="slideoff" data-orbit>
+					{% for item in menu %}
+					<li><img src="/static/img/{{ item[2] }}"></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		{% for item in menu %}
+		<div class="large-4 medium-6 columns">
+			<div class="callout panel">
+				{{ item[1] }}
+			</div>
+		</div>
+
+		{% endfor %}
+		<br><br>
+		<div class="row">
+			<div class="large-12 columns">
+				<form action="/order">
+					<label class="joyride-close-tip" style="margin-left:0px">What kind of sushi would you like? </label>
+				</div>
+			</div>
 			<br><br>
-			<select name="sushi">
-				<option value=""> Please Select </option>
-				{% for item in menu %}
-				<option value='{{ item[0] }}'> {{ item[1] }} </option>
-				{% endfor %}
-			</select>
+			<div class="row">
+				<div class="6-column">
+					<select name="sushi">
+						<option value=""> Please Select </option>
+						{% for item in menu %}
+						<option value='{{ item[0] }}'> {{ item[1] }} </option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+
 			<br><br>
 
-			<label>Additional Comments</label><br>
-			<textarea cols="20" rows="5" name="food"></textarea><br>
-			<input type="submit" value="Submit" />
+			<label>Please enter your number here so we can let you know when your order is ready.</label><br>
+			<input type="text" />
+			<input class="small round button" type="submit" value="Submit" />
 		</form>
-		<br>
+
+		<script src="/static/js/vendor/jquery.js"></script>
+		<script src="/static/js/vendor/fastclick.js"></script>
+		<script src="/static/js/foundation.min.js"></script>
+		<script>$(document).foundation();</script>
 	</body>
 </html>

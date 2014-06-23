@@ -1,25 +1,79 @@
-.sushi-piece {
-	
+body {
+	background: 
+	radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+	radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+	background-color: slategray;
+	background-size:75px 100px;
+	-webkit-animation: shake ease .25s alternate 6;
+	-webkit-animation-delay: 3.5s;
 }
 
 h1 {
-	color: blue;
-	animation-duration: 3s;
-	animation-name: slidein;
+
+	color: #eee;
+	font-weight: bolder;
+	font-family: Papyrus;
+	background-color: #456;
+	border: 20px groove slategray;
+	text-align: center;
+	padding-top: 10px;
+	-webkit-animation: slidein-right ease 3s;
+}
+
+h1:hover {
+	color: #456;
+	background-color: #eee;
+	border: 20px ridge #aaa;
 }
 
 h2 {
-	color: red;
+	display: inline-block;
+	background-color: #456;
+	color: #eee;
+	border:15px groove slategray;
+	padding:10px;
+	margin-bottom: 20px; 
 }
 
-@keyframes slidein {
+.slideoff {
+	-webkit-animation: slideoff
+}
+
+h2:hover {
+	-webkit-animation: grow ease 3s;
+}
+
+@-webkit-keyframes slidein-right {
 	from {
-		margin-left: 100%;
-		width: 300%;
-	}
-	
-	to {
-		margin-left: 0%;
-		width: 100%;
+		margin-left:100%;
+		width:300%
+  }
+
+  50% {
+	  font-size:450%;
+	  margin-left:0%;
+	  width:150%;
+  }
+
+  to {
+	  margin-left:0%;
+	  width:100%;
+  }
+}
+
+@-webkit-keyframes grow {
+	50% {
+		-webkit-transform: scale(2);
 	}
 }
+
+@-webkit-keyframes shake {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(20deg);
+	}
+}
+
+/*= require foundation */
