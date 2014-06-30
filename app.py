@@ -38,7 +38,7 @@ def order():
 	return render_template('order.html', sushi=sushi, time=time)
 
 def format_number(contact_number):
-	if (!contact_number.isdigit()):
+	if (contact_number.isdigit() == False):
 		just_digits = contact_number.translate(None, '()- ')
 	if (len(just_digits) == 10):
 		formatted_number = "+1" + just_digits
