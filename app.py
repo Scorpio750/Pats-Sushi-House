@@ -20,19 +20,33 @@ def home():
 def order():
 	sushi = request.args['sushi']
 	time = random.choice(range(5, 41, 5))
-	return render_template('order.html', sushi=sushi, time=time)
+	
+	formatted_number  = format_number(request.args['twilio'])
 
-	from twilio.rest import TwilioRestClient 
-
+	# Twilio stuff here
 	# credentials here 
 	ACCOUNT_SID = "AC22f2a7b4bd38d88ed3c196a7e8b29b85" 
 	AUTH_TOKEN = "e38445dfc0ae60cae15cc44b3734b9f2" 
 
 	client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
-
 	client.messages.create( 
 			from_="+18622608699",   
+			to_=formatted_number,
+			body="Yer mother is an animal"
 			)
+
+	return render_template('order.html', sushi=sushi, time=time)
+
+def format_number(contact_number):
+	if !(contact_number.isdigit()):
+		just_digits = contact_number.translate(None, '()- ')
+	if (len(just_digits) == 10):
+		formatted_number = "+1" + just_digits
+	elif (len(just_digits) == 11):
+		formatted_number = "+" + just_digits
+	
+	return formatted_number
+
 
 if __name__ == '__main__':
 	app.run('0.0.0.0', port=2000, debug=True)

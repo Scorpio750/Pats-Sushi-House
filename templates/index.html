@@ -10,6 +10,7 @@
 	</head>
 
 	<body>
+		<!--Headings-->
 		<div class="row">
 			<div class="large-9 columns">
 				<div><h1>Welcome to Pat's Sushi House!</h1></div>
@@ -22,26 +23,23 @@
 			</div>
 		</div>
 
+		<!--Orbit Container-->
 		<div class="row">
-			<div class="medium-3 columns, sushi-slideoff">
-				<ul data-orbit>
-					{% for item in menu %}
-					<li><img src="/static/img/{{ item[2] }}"></li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-
-		<div class="row">
-			{% for item in menu %}
-			<div class="small-2 columns">
-				<div class="callout panel">
-					{{ item[1] }}
+			<div class="medium-6 columns">
+				<div class="orbit-container">
+					<ul data-orbit class="orbit-slides-container, sushi-slideoff">
+						{% for item in menu %}
+						<li>
+						<img src="/static/img/{{ item[2] }}">
+						<div class="orbit-caption">{{ item[1] }}</div>
+						</li>
+						{% endfor %}
+					</ul>
 				</div>
 			</div>
-			{% endfor %}
 		</div>
 
+		<!--Item Prompt-->
 		<div class="row">
 			<div class="small-4 column">
 				<div class="callout panel">
@@ -60,12 +58,12 @@
 					</select>
 				</div>
 			</div>
-
+			<!--Twilio Form-->
 			<div class="row">
 				<div class="medium-6 medium-4 column">
 					<div class="callout panel">
 						<label>Please enter your number here so we can let you know when your order is ready.</label><br>
-						<input type="text" />
+						<input name="twilio" type="text" />
 						<input class="small round button" type="submit" value="Submit" />
 					</form>
 				</div>
@@ -76,7 +74,7 @@
 		<script src="/static/js/vendor/fastclick.js"></script>
 		<script src="/static/js/foundation.min.js"></script>
 		<script>$(document).foundation();</script>
-		<audio loop>
+		<audio>
 		<source src="/static/Lunar_Vi-corrifir.mp3"></source>
 		</audio>
 		<script>

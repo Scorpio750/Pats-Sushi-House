@@ -4,7 +4,7 @@ body {
 	radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
 	background-color: slategray;
 	background-size:75px 100px;
-	-webkit-animation: background-transition 8s linear 7.5s, animated-background 1.09s linear 17.75s alternate infinite, shake 2s ease 3.5s alternate 2;
+	-webkit-animation: background-transition 8s linear 7.5s, animated-background 1.09s linear 17.85s alternate 20, shake 2s ease 3.5s alternate 2;
 }
 
 h1 {
@@ -13,7 +13,7 @@ h1 {
 	font-weight: bolder;
 	font-family: Papyrus;
 	background-color: #456;
-	border: 20px groove slategray;
+	border: 20px ridge slategray;
 	text-align: center;
 	margin-top: 10px;
 	padding-top: 10px;
@@ -69,6 +69,7 @@ h2 {
 	0% { -webkit-transform: rotate(0deg); }
 	100% { 
 		-webkit-transform: rotate(-20deg);
+		/* background-position: 50% 50%; */
 	}
 }
 
