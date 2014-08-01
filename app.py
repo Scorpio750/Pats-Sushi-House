@@ -38,7 +38,7 @@ def order():
 	return render_template('order.html', sushi=sushi, time=time)
 
 def format_number(contact_number):
-	list_number = None
+	list_number = ""
 	for char in contact_number:
 		if char.isdigit():
 			list_number += char
