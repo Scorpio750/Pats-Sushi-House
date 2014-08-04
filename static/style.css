@@ -29,17 +29,25 @@ h1:hover {
 h2 {
 	display: inline-block;
 	background-color: #456;
+	font-family: Papyrus;
 	color: #eee;
 	border:15px groove slategray;
 	padding:10px;
 	margin-bottom: 20px; 
+	float:left;
 }
 
+h2:hover {
+	color: #456;
+	background-color: #eee;
+	border: 20px groove #888;
+}
 .h2-slideoff {
 	-webkit-animation: off-right 3.7s, slideoff 3s ease-in 3.7s reverse;
 }
 
 .sushi-slideoff {
+	float:right;
 	-webkit-animation: off-right 4.2s, slideoff 3s ease-in 4.2s reverse;
 }
 
