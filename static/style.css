@@ -40,15 +40,16 @@ h2 {
 h2:hover {
 	color: #456;
 	background-color: #eee;
-	border: 20px groove #888;
+	border: 15px groove #888;
 }
+
 .h2-slideoff {
 	-webkit-animation: off-right 3.7s, slideoff 3s ease-in 3.7s reverse;
 }
 
-.sushi-slideoff {
+.orbit-container {
+	-webkit-animation: off-right 3.7s, slideoff 3s ease-in 3.7s reverse;
 	float:right;
-	-webkit-animation: off-right 4.2s, slideoff 3s ease-in 4.2s reverse;
 }
 
 @-webkit-keyframes slidein-right {
