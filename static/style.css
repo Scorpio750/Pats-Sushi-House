@@ -57,20 +57,38 @@ h2:hover {
 	float:right;
 }
 
-@-webkit-keyframes slidein-right {
+@-webkit-keyframes slidein-left {
 	from {
-		margin-left:100%;
+		margin-right:100%;
 		width:300%
   }
 
   50% {
 	  font-size:450%;
-	  margin-left:0%;
+	  margin-right:0%;
 	  width:150%;
   }
 
   to {
-	  margin-left:0%;
+	  margin-right:0%;
+	  width:100%;
+  }
+}
+
+@-webkit-keyframes slidein-right {
+	from {
+		margin-right:100%;
+		width:300%
+  }
+
+  50% {
+	  font-size:450%;
+	  margin-right:0%;
+	  width:150%;
+  }
+
+  to {
+	  margin-right:0%;
 	  width:100%;
   }
 }
@@ -83,8 +101,8 @@ h2:hover {
 	0% { -webkit-transform: rotate(0deg); }
 	100% { 
 		-webkit-transform: rotate(-20deg);
-		/* background-position: 50% 50%; */
-	}
+		background-position: 50% 50%; 
+}
 }
 
 @-webkit-keyframes off-right {
@@ -97,22 +115,22 @@ h2:hover {
 }
 @-webkit-keyframes background-transition {
 	from {
-	}
-	5% {
-		background-image: url('img/trippy.jpg');
-	}
-	20% {
-		background-image: url('img/skyline.jpg');
-	}
-	35% {
-		background-image: url('img/psychedelic.jpg');
-	}
-	60% {
-		background-image: url('img/artwork_colors.jpg');
-	}
-	80% {
-		background-image: url('img/Trippy-Wallpaper.jpg');
-	}
+}
+5% {
+	background-image: url('img/trippy.jpg');
+}
+20% {
+	background-image: url('img/skyline.jpg');
+}
+35% {
+	background-image: url('img/psychedelic.jpg');
+}
+60% {
+	background-image: url('img/artwork_colors.jpg');
+}
+80% {
+	background-image: url('img/Trippy-Wallpaper.jpg');
+}
 to {
 	background-image: url('/static/img/Trippy-Wallpaper.jpg');
 	background-size: 150% 150%;
@@ -121,10 +139,10 @@ to {
 
 @-webkit-keyframes animated-background {
 	from { 
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 6.25% 0;
+		background-position: 0% 0%;
+}
+50% {
+	background-position: 6.25% 0%;
 }
 to {
 	background-position: 6.25% 11%; 
