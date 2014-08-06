@@ -12,11 +12,13 @@ h1 {
 	color: #eee;
 	font-weight: bolder;
 	font-family: Papyrus;
+	font-size: 32pt;
 	background-color: #456;
 	border: 20px ridge slategray;
 	text-align: center;
 	margin-top: 10px;
 	padding-top: 10px;
+	margin: auto;
 	-webkit-animation: slidein-right ease 3s;
 }
 
@@ -30,11 +32,14 @@ h2 {
 	display: inline-block;
 	background-color: #456;
 	font-family: Papyrus;
+	font-size: 26pt;
 	color: #eee;
 	border:15px groove slategray;
 	padding:10px;
+	padding-bottom: 0px;
 	margin-bottom: 20px; 
-	float:left;
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
 h2:hover {
